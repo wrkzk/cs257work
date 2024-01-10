@@ -1,3 +1,6 @@
 Pizza
 Waffles
 Tacos
+Ice Cream
+French Fries
+Salads

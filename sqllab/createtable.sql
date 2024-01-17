@@ -7,7 +7,7 @@ CREATE TABLE earthquakes (
   mag real,
   magtype text,
   id text,
-  updated time with time zone,z
+  updated time with time zone,
   place text,
   status text
 );

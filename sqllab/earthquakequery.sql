@@ -1,5 +1,5 @@
 -- List all magnitues for earthquakes with an epicenter deeper than 50 kilometers 
-SELECT mag FROM earthquakes WHERE quakedepth > 50
+SELECT mag FROM earthquakes WHERE quakedepth > 50;
 
 -- Find all the places that have had earthquakes above matnitude 5 where the epicenter was more than 100 kilometers deep
 SELECT place FROM earthquakes WHERE quakedepth > 100 INTERSECT SELECT place FROM earthquakes WHERE mag > 5;

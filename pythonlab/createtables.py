@@ -4,15 +4,13 @@ import psycopg2
 
 def create_tables():
 
-    command1 = 
-        """
+    command1 = """
         CREATE TABLE states ( 
             state_name text NOT NULL,
             state_id text
         )
         """
-    command2 =
-        """
+    command2 = """
         CREATE TABLE cities (
             city_name text NOT NULL,
             state_name text NOT NULL,

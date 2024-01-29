@@ -28,7 +28,7 @@ def create_tables():
             port = 5432,
             database = "kozakw",
             user = "kozakw",
-            password = "",
+            password = "summer862winter",
         )
         cur = conn.cursor()
 

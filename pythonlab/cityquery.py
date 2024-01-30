@@ -14,4 +14,9 @@ cur = con.cursor
 def query_one():
     cur.execute('SELECT city_name FROM cities WHERE city_name = "Northfield"')
     result = cur.fetchone()
+    
+    if result = None:
+        print("Northfield is not found in the database.")
+        return
+
     print(result)

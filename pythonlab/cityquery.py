@@ -19,6 +19,14 @@ def query_one():
         print("Northfield is not found in the database.")
         return
 
-    print(result)
+    cur.execute("SELECT city_lat,city_lon FROM cities WHERE city_name='Northfield'")
+    location = cur.fetchone()
+    print("lat: " + str(location[0]) + ", lon: " + str(location[1]))
+
+def query_two():
+    cur.execute("SELECT TOP 1 city_name FROM cities ORDER BY city_pop")
+    largest_city = cur.fetchone()
+    print(largest_city)
 
 query_one()
+query_two()

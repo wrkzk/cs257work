@@ -50,7 +50,27 @@ def query_four():
     west = cur.fetchone()
     print("Farthest West: " + west[0])
 
+def query_five():
+    user_state = input("Enter a state: ")
+
+    if len(user_state) == 2:
+        user_state = user_state.upper()
+        cur.execute("SELECT state_name FROM states WHERE state_id='" + user_state + "';")
+        user_state = cur.fetchone()[0]
+
+    cur.execute("SELECT city_pop FROM cities WHERE state_name='" + user_state + "';")
+    total = 0
+
+    while True:
+        current_city = cur.fetchone()
+        if current_city == None:
+            break
+        total += current_city[0]       
+
+    print(total)
+
 query_one()
 query_two()
 query_three()
 query_four()
+query_five()

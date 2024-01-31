@@ -28,5 +28,29 @@ def query_two():
     largest_city = cur.fetchone()
     print("Largest City: " + str(largest_city[0]))
 
+def query_three():
+    cur.execute("SELECT city_name FROM cities WHERE state_name='Minnesota' ORDER BY city_pop;")
+    smallest_mn_city = cur.fetchone()
+    print("Smallest City in Minnesota: " + str(smallest_mn_city[0]))
+
+def query_four():
+    cur.execute("SELECT city_name FROM cities ORDER BY city_lat DESC;")
+    north = cur.fetchone()
+    print("Farthest North: " + north[0])
+
+    cur.execute("SELECT city_name FROM cities ORDER BY city_lon DESC;")
+    east = cur.fetchone()
+    print("Farthest East: " + east[0])
+
+    cur.execute("SELECT city_name FROM cities ORDER BY city_lat;")
+    south = cur.fetchone()
+    print("Farthest South: " + south[0])
+
+    cur.execute("SELECT city_name FROM cities ORDER BY city_lon;")
+    west = cur.fetchone()
+    print("Farthest West: " + west[0])
+
 query_one()
 query_two()
+query_three()
+query_four()

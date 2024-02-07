@@ -36,7 +36,7 @@ def add(num1, num2):
 def get_population(abbrev):
     cur.execute("SELECT state_pop FROM state_pops WHERE state_id='" + abbrev.upper() + "';")
     pop = str(cur.fetchone()[0])
-    return pop
+    return abbrev.upper() + ": " + pop
 
 if __name__ == '__main__':
     my_port = 5127

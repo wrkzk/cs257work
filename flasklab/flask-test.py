@@ -34,7 +34,7 @@ def add(num1, num2):
 
 @app.route('/pop/<abbrev>')
 def get_population(abbrev):
-    cur.execute("SELECT state_pop FROM state_pops WHERE state_id='" + abbrev + "';")
+    cur.execute("SELECT state_pop FROM state_pops WHERE state_id='" + abbrev.upper() + "';")
     pop = str(cur.fetchone()[0])
     return pop
 

@@ -1,8 +1,19 @@
+#!usr/bin/python
+
 import flask
+import psycopg2
 
 app = flask.Flask(__name__)
 
-#
+conn = psycopg2.connect(
+    host = "localhost",
+    port = "5432",
+    database = "kozakw",
+    user = "kozakw",
+    password = "summer862winter"
+)
+cur = conn.cursor()
+
 @app.route('/hello')
 def my_function():
     return "Hello World!"
@@ -20,6 +31,12 @@ def my_color(word1):
 def add(num1, num2):
     sum = int(num1) + int(num2)
     return str(sum)
+
+@app.route('/pop/<abbrev>')
+def get_population(abbrev):
+    cur.execute("SELECT state_pop FROM state_pops WHERE state_id='" + abbrev + "';")
+    pop = str(cur.fetchone()[0])
+    return pop
 
 if __name__ == '__main__':
     my_port = 5127

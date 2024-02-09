@@ -1,4 +1,4 @@
-#!usr/bin/python
+#!/usr/bin/python
 
 import flask
 import psycopg2
@@ -36,6 +36,8 @@ def add(num1, num2):
 def get_population(abbrev):
     cur.execute("SELECT state_pop FROM state_pops WHERE state_id='" + abbrev.upper() + "';")
     pop = str(cur.fetchone()[0])
+    if pop is None:
+        return "Invalid state"
     return abbrev.upper() + ": " + pop
 
 if __name__ == '__main__':

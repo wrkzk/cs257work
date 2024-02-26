@@ -1,14 +1,13 @@
-.my-class{
+.my-class {
     text-align: center;
-    color: blue;
-  }
-  
-  .center-para{
+}
+
+.center-para{
     text-align: center;
     margin-top: 20px;
-  }
+}
   
-  .big-button{
+.big-button{
     font-size: large;
-  }
+}
   

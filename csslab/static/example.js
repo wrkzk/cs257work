@@ -1,4 +1,8 @@
-function changeColor() {
-    the_heading = document.getElementById("hello");
-    the_heading.style.color = "red";
+const the_heading = document.getElementById("hello");
+
+function genNum() {
+    let randNum = Math.floor(Math.random() * 100);
+    the_heading.innerHTML = "Number: " + randNum;
 }
+
+genNum()
